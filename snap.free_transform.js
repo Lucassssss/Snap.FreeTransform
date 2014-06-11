@@ -119,7 +119,6 @@ Snap.plugin(function(Snap, Element, Paper, global, Fragment) {
 						cx = Math.max(Math.min(cx, ft.opts.boundary.x + ( ft.opts.boundary.width  || getPaperSize().x * viewBoxRatio.x)), ft.opts.boundary.x);
 						cy = Math.max(Math.min(cy, ft.opts.boundary.y + ( ft.opts.boundary.height || getPaperSize().y * viewBoxRatio.y)), ft.opts.boundary.y);
 					}
-
 					ft.handles[axis].disc.attr({ cx: cx, cy: cy });
 
 					ft.handles[axis].line.toFront().attr({
@@ -903,13 +902,13 @@ Snap.plugin(function(Snap, Element, Paper, global, Fragment) {
 		 */
 		function getPaperSize() {
 			var match = {
-				x: /^([0-9]+)%$/.exec(paper.width),
-				y: /^([0-9]+)%$/.exec(paper.height)
+				x: /^([0-9]+)%$/.exec(paper.node.width.baseVal.value),
+				y: /^([0-9]+)%$/.exec(paper.node.height.baseVal.value)
 			};
 
 			return {
-				x: match.x ? paper.node.clientWidth  || paper.node.parentNode.clientWidth  * parseInt(match.x[1], 10) * 0.01 : paper.node.clientWidth  || paper.width,
-				y: match.y ? paper.node.clientHeight || paper.node.parentNode.clientHeight * parseInt(match.y[1], 10) * 0.01 : paper.node.clientHeight || paper.height
+				x: match.x ? paper.node.clientWidth  || paper.node.parentNode.clientWidth  * parseInt(match.x[1], 10) * 0.01 : paper.node.clientWidth  || paper.node.width.baseVal.value,
+				y: match.y ? paper.node.clientHeight || paper.node.parentNode.clientHeight * parseInt(match.y[1], 10) * 0.01 : paper.node.clientHeight || paper.node.height.baseVal.value
 			};
 		}
 
