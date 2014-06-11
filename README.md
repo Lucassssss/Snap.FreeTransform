@@ -1,7 +1,7 @@
 Snap.FreeTransform
 ====================
 
->Originally forked from [Raphaël.FreeTransform](https://github.com/sgurenkov/Snap.FreeTransform.git).
+>Originally forked from [Raphaël.FreeTransform](https://github.com/ElbertF/Raphael.FreeTransform).
 
   Free transform tool for [Snapsvg](http://snapsvg.io/) elements and sets with many options. Supports snap-to-grid dragging, scaling and rotating with a specified interval and range.
 
