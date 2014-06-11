@@ -1,18 +1,19 @@
-Raphaël.FreeTransform
+Snap.FreeTransform
 ====================
 
-  Free transform tool for [Raphaël 2.0](http://raphaeljs.com/) elements and sets with many options. Supports snap-to-grid dragging, scaling and rotating with a specified interval and range.
+>Originally forked from [Raphaël.FreeTransform](https://github.com/sgurenkov/Snap.FreeTransform.git).
+
+  Free transform tool for [Snapsvg](http://snapsvg.io/) elements and sets with many options. Supports snap-to-grid dragging, scaling and rotating with a specified interval and range.
 
   ![Screenshot](https://github.com/ElbertF/Raphael.FreeTransform/raw/master/screenshot.png)
 
   *Licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php).*
 
-  ![Icon](http://alias.io/images/bitcoin_16x16.png) Donate Bitcoin: 1PgSBQXVBpVHxZKmQpaJDULyPwqw9ieVcT - *Thanks!*
 
 Demo
 ----
 
-  http://alias.io/raphael/free_transform/
+  http://alias.io/raphael/free_transform/ (an old demo for Raphael.js)
 
 Examples
 --------
@@ -192,12 +193,3 @@ Removes handles and deletes all values set by the plugin.
 #### `updateHandles()`
 
 Updates handles to reflect the element's transformations.
-
-
-Raphaël.FreeTransform and Raphaël.JSON
---------------------------------------
-
-Instructions on how to use Raphaël.FreeTransform in combination with
-Raphaël.JSON can be found 
-[here](https://github.com/ElbertF/Raphael.JSON#raphaëljson-and-raphaëlfreetransform).
-
