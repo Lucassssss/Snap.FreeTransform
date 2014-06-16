@@ -901,14 +901,9 @@ Snap.plugin(function(Snap, Element, Paper, global, Fragment) {
 		 * Get dimension of the paper
 		 */
 		function getPaperSize() {
-			var match = {
-				x: /^([0-9]+)%$/.exec(paper.node.width.baseVal.value),
-				y: /^([0-9]+)%$/.exec(paper.node.height.baseVal.value)
-			};
-
 			return {
-				x: match.x ? paper.node.clientWidth  || paper.node.parentNode.clientWidth  * parseInt(match.x[1], 10) * 0.01 : paper.node.clientWidth  || paper.node.width.baseVal.value,
-				y: match.y ? paper.node.clientHeight || paper.node.parentNode.clientHeight * parseInt(match.y[1], 10) * 0.01 : paper.node.clientHeight || paper.node.height.baseVal.value
+				x: paper.node.width.baseVal.value,
+				y: paper.node.height.baseVal.value
 			};
 		}
 
