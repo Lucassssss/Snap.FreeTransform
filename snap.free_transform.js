@@ -833,7 +833,7 @@ Snap.plugin(function(Snap, Element, Paper, global, Fragment) {
 							scale:     { x: 1, y: 1 },
 							translate: { x: 0, y: 0 }
 						},
-						transformString: item.matrix.toTransformString()
+                        transformString: item.matrix !== undefined ? item.matrix.toTransformString() : ''
 					});
 				}
 			});
@@ -843,12 +843,14 @@ Snap.plugin(function(Snap, Element, Paper, global, Fragment) {
 
 		// Get the current transform values for each item
 		ft.items.map(function(item, i) {
-			var localMatrix = item.el.matrix.split();
-			ft.items[i].attrs.translate.x += localMatrix.dx;
-			ft.items[i].attrs.translate.y += localMatrix.dy;
-			ft.items[i].attrs.scale.x *= localMatrix.scalex;
-			ft.items[i].attrs.scale.y *= localMatrix.scaley;
-			ft.items[i].attrs.rotate += localMatrix.rotate;
+            if (item.el.matrix !== undefined) {
+                var localMatrix = item.el.matrix.split();
+                ft.items[i].attrs.translate.x += localMatrix.dx;
+                ft.items[i].attrs.translate.y += localMatrix.dy;
+                ft.items[i].attrs.scale.x *= localMatrix.scalex;
+                ft.items[i].attrs.scale.y *= localMatrix.scaley;
+                ft.items[i].attrs.rotate += localMatrix.rotate;
+            }
 		});
 
 		// If subject is not of type set, the first item _is_ the subject
